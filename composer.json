@@ -16,30 +16,8 @@
 			"type" : "git",
 			"url" : "https://github.com/mschurr/framework"
 		},
-		{
-			"type" : "git",
-			"url" : "https://github.com/mschurr/project"
-		}
 	],
 	"require" : {
-		"php" : ">=5.3.0",
-		"ext-gd" : "*",
-		"ext-mcrypt" : "*",
-		"ext-pdo" : "*",
-		"lib-curl" : "*",
-		"lib-openssl" : "*",
-		"flip/whoops" : "1.0.7",
-		"swiftmailer/swiftmailer" : "5.0.*",
 		"schurrso/framework" : "*"
-	},
-	"require-dev" : {
-	},
-	"autoload" : {
-		"classmap" : [],
-		"files" : [],
-		"psr-0" : {}
-	},
-	"target-dir" : "framework",
-	"minimum-stability" : "dev",
-	"prefer-stable" : true
+	}
 }
