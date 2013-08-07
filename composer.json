@@ -1,5 +1,5 @@
 {
-	"name" : "schurrso/project",
+	"name" : "mschurr/project",
 	"description" : "",
 	"keywords" : [],
 	"license" : "MIT",
@@ -13,11 +13,11 @@
 	],
 	"repositories" : [
 		{
-			"type" : "git",
+			"type" : "vcs",
 			"url" : "https://github.com/mschurr/framework"
 		}
 	],
 	"require" : {
-		"schurrso/framework" : "*"
+		"mschurr/framework" : "dev-master"
 	}
 }
