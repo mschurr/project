@@ -1,12 +1,13 @@
 project
 =======
 
-The project files for my PHP framework.
+This repository contains project files for my PHP framework.
 
-Requrements:
-Composer (getcomposer.org)
+Requirements:
+* Composer (http://getcomposer.org)
+* PHP >= 5.3.0
 
 Usage:
 Download the contents of this repository to your hard drive.
-Run the command "composer install" in the folder that contains composer.json.
-
+Run the command "php composer.phar install" in the folder that contains composer.json.
+Enjoy!
