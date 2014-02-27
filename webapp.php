@@ -16,3 +16,11 @@ class MyController extends Controller
 }
 
 Route::any('/', 'MyController');
+
+Route::error(404, function(Request $request, Response $response){
+	return View::make('errors.404');
+});
+
+Route::error(500, function(Request $request, Response $response){
+	return View::make('errors.500');
+});
