@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Configuration Values
+ */
 Config::set(array(
 	/**
 	 * Database Driver Information
@@ -10,6 +12,21 @@ Config::set(array(
 	'database.host' => 'localhost',
 	'database.port' => '3306',
 	'database.name' => '',
+
+	/**
+	 * Authentication Information
+	 */
+	'auth.driver' => 'db',
+
+	/**
+	 * User Service Driver
+	 */
+	'users.driver' => 'db',
+
+	/**
+	 * Group Service Driver
+	 */
+	'groups.driver' => 'db',
 
 	/**
 	 * Development Mode
@@ -24,3 +41,15 @@ Config::set(array(
 	 */
 	'cookies.secretKey' => '',
 ));
+
+
+/**
+ * Error Pages
+ */
+Route::error(404, function(Request $request, Response $response){
+	return View::make('errors.404');
+});
+
+Route::error(500, function(Request $request, Response $response){
+	return View::make('errors.500');
+});

@@ -1,26 +1,29 @@
 <?php
-
-class MyController extends Controller
-{
-	public function get()
-	{
-		$this->document->setTitle('You have arrived!');
-		$this->response->write('You have arrived!');
-	}
-	
-	public function post()
-	{
-		$this->response->headers['Content-Type'] = 'text/plain';
-		$this->response->write( $this->response );
-	}
-}
-
-Route::any('/', 'MyController');
-
-Route::error(404, function(Request $request, Response $response){
-	return View::make('errors.404');
+/**
+ * Application Routes
+ */
+Route::get('/', function(Request $request, Response $response){
+	return View::make('home');
 });
 
-Route::error(500, function(Request $request, Response $response){
-	return View::make('errors.500');
+/**
+ * Application Routes (requiring authentication)
+ */
+$filter = function(Request $request){
+	if($request->session->auth->loggedIn)
+		return true;
+	return Redirect::to('AuthController@login');
+};
+
+Route::filter($filter, function(){
+	Route::get('/account', function(Request $request, Response $response){
+		$response->write(sprintf("You are logged in as user %d.", $request->session->auth->user->id));
+	});
 });
+
+/**
+ * Authentication Service Routes
+ */
+Route::get('/login', 'AuthController@login');
+Route::post('/login', 'AuthController@loginAction');
+Route::get('/logout', 'AuthController@logout');
