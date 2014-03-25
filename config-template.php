@@ -14,7 +14,7 @@ Config::set(array(
 	'database.name' => '',
 
 	/**
-	 * Authentication Information
+	 * Authentication Service Driver
 	 */
 	'auth.driver' => 'db',
 
@@ -29,6 +29,41 @@ Config::set(array(
 	'groups.driver' => 'db',
 
 	/**
+	 * Session Service Driver
+	 */
+	'session.driver' => 'cache',
+
+	/**
+	 * Configuration Driver
+	 *  If you want to enable dynamically setting configuration values at runtime.
+	 */
+	'config.driver' => null,
+
+	/**
+	 * Cache Service Driver
+	 */
+	'cache.driver' => 'filesystem',
+
+	/**
+	 * HTTP Configuration Options
+	 */
+
+	// You should use this to indicate whether or not your application servers are behind a load balancer.
+	// If you set this to true, X-Forwarded-For and X-Forwarded-Proto will be used when processing requests.
+	'http.loadbalanced' => false,
+
+	/**
+	 * Mail Service Configuration
+	 */
+	'mailer.name' => '',
+	'mailer.email' => '',
+	'mailer.host' => '',
+	'mailer.port' => '',
+	'mailer.user' => '',
+	'mailer.pass' => '',
+	'mailer.crypt' => 'ssl',
+
+	/**
 	 * Development Mode
 	 * 
 	 * If development mode is enabled, you will be shown rich error messages. If development mode is not, you will be 
@@ -37,7 +72,7 @@ Config::set(array(
 	'app.development'	=> true,
 
 	/**
-	 * A long, secret key that will be used to verify the integrity of cookies.
+	 * A long, private key that will be used to sign and verify cookies.
 	 */
 	'cookies.secretKey' => '',
 ));

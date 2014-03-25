@@ -13,9 +13,4 @@ To use this,
 * To use a database, set up the database and execute `vendor/mschurr/framework/src/schema.sql`
 * Place the configuration information in `config-template.php` and rename the file to `config.php`
 * Run the development server for testing `php -S localhost:80 server.php`
-* Deploy using HipHop `./hhvm.sh` or any PHP-enabled web server
-
-Requirements:
-* Composer
-* MySQL
-* PHP >= 5.5
+* Deploy using HipHop `./hhvm.sh` or any PHP-enabled web stack
